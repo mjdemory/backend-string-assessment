@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-Kenzie assignment: String1
+Kenzie assignment:   String1
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.

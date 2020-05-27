@@ -4,7 +4,7 @@ Kenzie assignment: String2
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = "Michael DeMory. Helped by Zac Gerber, Tiffany McLean, and Ybrayym"
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -23,8 +23,13 @@ __author__ = "???"
 
 
 def verbing(s):
-    # your code here
-    return
+    if len(s) >= 3:
+        if s[-3:] == 'ing':
+            s += 'ly'
+        else:
+            s += 'ing'
+
+    return s
 
 
 # E. not_bad
@@ -37,8 +42,14 @@ def verbing(s):
 
 
 def not_bad(s):
-    # your code here
-    return
+
+    snot = s.find('not')
+    sbad = s.find('bad')
+    snew = s
+    if snot >= 0 and sbad >= 0 and snot < sbad:
+        snew = s[0:snot] + 'good' + s[sbad + len('bad'):]
+
+    return snew
 
 
 # F. front_back
@@ -52,17 +63,38 @@ def not_bad(s):
 
 
 def front_back(a, b):
-    # your code here
-    return
+    
+    a = len(a)
+    b = len(b)
+
+    if a%2 == 0:
+        apos = a//2
+    else:
+        apos = (a//2) + 1
+
+    if b%2 == 0:
+        bpos = a//2
+    else:
+        bpos = (a//2) + 1
+
+    fronta = a[0:apos]
+    backa = a[apos:]
+
+    frontb = b[0:bpos]
+    backb = b[bpos:]
+
+    return fronta + frontb +backa + backb
+
+
 
 
 # Provided simple test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
 def test(got, expected):
     if got == expected:
-        prefix = ' OK '
+        prefix= ' OK '
     else:
-        prefix = '  X '
+        prefix= '  X '
     print('{} got: {}     expected: {}'.format(
         prefix,
         repr(got),

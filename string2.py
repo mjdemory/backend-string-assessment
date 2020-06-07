@@ -4,7 +4,7 @@ Kenzie assignment: String2
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "Michael DeMory. Helped by Zac Gerber, Tiffany McLean, and Ybrayym"
+__author__ = "Michael DeMory. Helped by Zac Gerber, Tiffany McLean, Ybrayym, and walkthrough video with Daniel"
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -63,27 +63,36 @@ def not_bad(s):
 
 
 def front_back(a, b):
-    
-    a = len(a)
-    b = len(b)
+    apos = len(a)//2
+    bpos = len(b)//2
 
-    if a%2 == 0:
-        apos = a//2
-    else:
-        apos = (a//2) + 1
+    if len(a) % 2:
+        apos += 1
+    if len(b) % 2:
+        bpos += 1
+    return a[:apos] + b[:bpos] + a[apos:] + b[bpos:]
 
-    if b%2 == 0:
-        bpos = a//2
-    else:
-        bpos = (a//2) + 1
 
-    fronta = a[0:apos]
-    backa = a[apos:]
+    # a = len(a)
+    # b = len(b)
 
-    frontb = b[0:bpos]
-    backb = b[bpos:]
+    # if a%2 == 0:
+    #     apos = a//2
+    # else:
+    #     apos = (a//2) + 1
 
-    return fronta + frontb +backa + backb
+    # if b%2 == 0:
+    #     bpos = a//2
+    # else:
+    #     bpos = (a//2) + 1
+
+    # fronta = a[:apos]
+    # backa = a[apos:]
+
+    # frontb = b[:bpos]
+    # backb = b[bpos:]
+
+    # return fronta + frontb +backa + backb
 
 
 
